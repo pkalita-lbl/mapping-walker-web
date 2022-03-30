@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mapping-walker-web"
+version = "0.1.0"
+description = ""
+authors = ["Patrick Kalita <pkalita@lbl.gov>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.75.0"
+uvicorn = {extras = ["standard"], version = "^0.17.6"}
+mapping-walker = {git = "https://github.com/monarch-initiative/mapping-walker.git", rev = "main"}
+pydantic = "^1.9.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
