@@ -17,7 +17,7 @@ function PipelineRunForm({ onSubmit, submitting }) {
             <button 
                 className={styles.submitButton}
                 disabled={!curies || submitting}
-                onClick={() => onSubmit(curies)}
+                onClick={() => onSubmit(curies.trim())}
             >
                 {submitting ? <LoadingSpinner /> : 'SUBMIT'}
             </button>
