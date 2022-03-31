@@ -1,6 +1,6 @@
 # mapping-walker-web
 
-This project is a simple web interface which wraps around [mapping-walker](https://github.com/monarch-initiative/mapping-walker). It is split into to independent "sub-projects" contained in the `backend` and `frontend` directories.
+This project is a simple web interface which wraps around [mapping-walker](https://github.com/monarch-initiative/mapping-walker). It is split into two independent "sub-projects" contained in the `backend` and `frontend` directories.
 
 **! CAUTION !** This project is in early development stages. It is currently designed to run only locally as a demo. Results from `mapping-walker` may take a while to return, and this service is not yet set up to handle many concurrent requests. 
 
