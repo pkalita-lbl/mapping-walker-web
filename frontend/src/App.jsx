@@ -3,6 +3,7 @@ import PipelineRunForm from './components/PipelineRunForm'
 import PipelineRunResults from './components/PipelineRunResults'
 
 import style from './App.module.css'
+import { API_URL } from './config'
 
 function App() {
   const [submitting, setSubmitting] = useState(false)
@@ -16,7 +17,7 @@ function App() {
 
     let json
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL + '/pipeline', {
+      const response = await fetch(API_URL + '/pipeline', {
         method: 'POST',
         body: JSON.stringify({
           curies: curies.split(/\s*,\s*/)

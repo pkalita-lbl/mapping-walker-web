@@ -1,3 +1,4 @@
+import { API_URL } from "../config"
 import Markdown from "./Markdown"
 
 function PipelineRunResults({ result }) {
@@ -11,7 +12,7 @@ function PipelineRunResults({ result }) {
     return (
         <>
             {result.pngs.map(png => (
-                <img key={png} src={`${import.meta.env.VITE_API_URL}/${png}`} />
+                <img key={png} src={`${API_URL}/${png}`} />
             ))}
 
             <hr />
