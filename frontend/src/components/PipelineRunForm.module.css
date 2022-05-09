@@ -1,15 +1,14 @@
 .formContainer {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     max-width: 48rem;
     margin: 0 auto 2rem auto;
 }
 
-.curieInput {
-    font-size: 1.5rem;
+.formContainer input,
+.formContainer select {
+    font-size: 1rem;
     padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .submitButton {
@@ -21,9 +20,21 @@
     border-radius: 3px;
     cursor: pointer;
     letter-spacing: 3pt;
+    width: 100%;
 }
 
 .submitButton:disabled {
     opacity: 60%;
     cursor: not-allowed;
+}
+
+.inputGroup {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
 }

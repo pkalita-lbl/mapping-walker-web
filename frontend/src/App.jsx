@@ -10,7 +10,7 @@ function App() {
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
 
-  const handleSubmit = async (curies) => {
+  const handleSubmit = async (curies, provider) => {
     setResult(null)
     setSubmitting(true)
     setError(null)
@@ -20,6 +20,7 @@ function App() {
       const response = await fetch(API_URL + '/pipeline', {
         method: 'POST',
         body: JSON.stringify({
+          provider,
           curies: curies.split(/\s*,\s*/)
         }),
         headers: {

@@ -1,5 +1,6 @@
 import os
 import re
+from uuid import uuid4
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -35,8 +36,12 @@ def run_pipeline(inputs: PipelineInputs):
     if len(inputs.curies) == 0:
         raise HTTPException(status_code=422, detail='At least one curie value is required')
 
-    working_directory = output / '-'.join(inputs.curies)
-    ec = EndpointConfiguration(type=EndpointEnum.OxO)
+    working_directory = output / str(uuid4())
+    if inputs.provider == 'OxO':
+        type = EndpointEnum.OxO
+    elif inputs.provider == 'BioPortal':
+        type = EndpointEnum.BioPortal
+    ec = EndpointConfiguration(type=type)
     conf = PipelineConfiguration(working_directory=working_directory,
                                  stylesheet=stylesheet,
                                  endpoint_configurations=[ec])

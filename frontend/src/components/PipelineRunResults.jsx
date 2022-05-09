@@ -1,5 +1,6 @@
 import { API_URL } from "../config"
 import Markdown from "./Markdown"
+import style from './PipelineRunResults.module.css'
 
 function PipelineRunResults({ result }) {
     if (!result) {
@@ -12,7 +13,12 @@ function PipelineRunResults({ result }) {
     return (
         <>
             {result.pngs.map(png => (
-                <img key={png} src={`${API_URL}/${png}`} />
+                <a key={png} href={`${API_URL}/${png}`} target="_blank">
+                    <img 
+                        className={style.resultImage}
+                        src={`${API_URL}/${png}`}
+                    />
+                </a>
             ))}
 
             <hr />

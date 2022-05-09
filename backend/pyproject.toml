@@ -8,7 +8,7 @@ authors = ["Patrick Kalita <pkalita@lbl.gov>"]
 python = "^3.9"
 fastapi = "^0.75.0"
 uvicorn = {extras = ["standard"], version = "^0.17.6"}
-mapping-walker = {git = "https://github.com/monarch-initiative/mapping-walker.git", rev = "main"}
+mapping-walker = {git = "https://github.com/monarch-initiative/mapping-walker.git", rev = "6ff7d76"}
 pydantic = "^1.9.0"
 
 [tool.poetry.dev-dependencies]
